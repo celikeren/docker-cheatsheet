@@ -7,19 +7,18 @@
 _get real time events from the server_
 
 
-`docker system df`
+`docker system df`  
 _general info about images, containers, cache etc_  
-_shows docker disk usage_  
-
+_shows docker disk usage_
 
 
 ## quick start
->git clone https://github.com/docker/doodle.git  
+`git clone https://github.com/docker/doodle.git  
 cd doodle\cheers2019  
 docker build -t erencelik/cheers2019 .  
 docker run -it --rm erencelik/cheers2019  
 docker login  
-docker push erencelik/cheers2019  
+docker push erencelik/cheers2019`
 
 
 ## container
