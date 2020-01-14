@@ -148,5 +148,5 @@
     > _ENTRYPOINT has two forms:_  
     _ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)_  
     _ENTRYPOINT command param1 param2 (shell form)_
-
+    _configures a container that will run as an executable_  
 
