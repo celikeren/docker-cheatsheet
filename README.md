@@ -7,7 +7,7 @@
 > _get real time events from the server_
 
 
-`docker system df`  
+- `docker system df`  
  > _general info about images, containers, cache etc_  
   _shows docker disk usage_
 
@@ -22,66 +22,66 @@
 
 
 ## container
-`docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`  
+- `docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`  
  >_does the same:_  
-`docker run in28min..`
+- `docker run in28min..`
 
 
-`docker run -p 1903:5000 in28min..`  
+- `docker run -p 1903:5000 in28min..`  
 >_publish exposed port(5000) of project to host(1903)_  
 _host-port:container-port_  
 
-`docker run -p 1903:5000 -d in28min..`  
+- `docker run -p 1903:5000 -d in28min..`  
 >_detached mode_
 
-`docker container pause <id>`  
+- `docker container pause <id>`  
 >docker container unpause <id>
 
-`docker container inspect <id>`
+- `docker container inspect <id>`
 
-`docker container prune`  
+- `docker container prune`  
 >_removes all stopped containers_
 
-`docker container kill <id>`  
+- `docker container kill <id>`  
 >_immediate stop_
 
-`docker run -p 5000:5000 --restart=always in28min..`  
+- `docker run -p 5000:5000 --restart=always in28min..`  
 >_when you restart docker desktop, the container restarts too._
 >_restart=always or restart=no. default is no._
 
-`docker top <c_id>`  
+- `docker top <c_id>`  
 >_displays the running processes of container_
 
-`docker stats`  
+- `docker stats`  
 >_shows all the stats about the running containers_
 
-`docker run -p 5001:5000 -m 512m in28min..`  
+- `docker run -p 5001:5000 -m 512m in28min..`  
 >_specific max memory: 512m / 1G_
 
-`docker run -p 5001:5000 --cpu-quota 5000 in28min..`  
+- `docker run -p 5001:5000 --cpu-quota 5000 in28min..`  
 >_typically entire quota which is present is 100.000_
 >_how much cpu quota you want to allocate (%5 here)_
 
-`docker run -dit openjdk:8-jdk-alpine`  
+- `docker run -dit openjdk:8-jdk-alpine`  
 >_dit: detached and interactive shell_
 
 
 ## images
-`docker images`  
+- `docker images`  
 >_shows images_
 
-`docker tag in28min/todo-rest-api-h2:1.0.0.RELEASE in28min/todo-rest-api-h2:latest`
+- `docker tag in28min/todo-rest-api-h2:1.0.0.RELEASE in28min/todo-rest-api-h2:latest`
 
-`docker pull mysql`
+- `docker pull mysql`
 
-`docker image remove <id>`  
+- `docker image remove <id>`  
 >_removes locally_
 
-`docker search mysql`
+- `docker search mysql`
 
-`docker image history <id>`
+- `docker image history <id>`
 
-`docker image inspect <id>`  
+- `docker image inspect <id>`  
 
 
 ## logs
