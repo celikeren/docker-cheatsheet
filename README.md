@@ -3,7 +3,7 @@
 ## general
 > docker --version
 
->docker events  
+> docker events  
 _get real time events from the server_
 
 docker system df  
