@@ -8,7 +8,7 @@
 
 
 `docker system df`  
-  _general info about images, containers, cache etc_  
+ > _general info about images, containers, cache etc_  
   _shows docker disk usage_
 
 
@@ -23,11 +23,11 @@
 
 ## container
 `docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`  
- _does the same:_  
+ >_does the same:_  
 `docker run in28min..`
 
 `docker run -p 1903:5000 in28min..`  
-_publish exposed port(5000) of project to host(1903)_  
+>_publish exposed port(5000) of project to host(1903)_  
 _host-port:container-port_  
 
 `docker run -p 1903:5000 -d in28min..`  
