@@ -6,7 +6,7 @@ docker --version
 docker events\
 _get real time events from the server_
 
-docker system df			
+docker system df  
 _general info about images, containers, cache etc_
 _shows docker disk usage_
 
