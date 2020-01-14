@@ -1,7 +1,7 @@
 # docker tutorial notes
 
 ## general
-`docker --version`
+`docker --version`  
     tab
 
 `docker events`  
