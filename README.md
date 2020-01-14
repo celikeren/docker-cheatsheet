@@ -1,7 +1,5 @@
 # docker tutorial notes
 
-hub.docker.com
-
 ### commands
 
 ##### general
