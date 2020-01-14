@@ -139,7 +139,11 @@
     _FROM can appear multiple times within a single Dockerfile_  
     _a name can be given to a new build stage by adding AS name_  
 
-- `ADD target/hello-world-rest-api.jar hello-world-rest-api.jar`  
+- `ADD target/hello-world-rest-api.jar hello-world-rest-api.jar`
+    > _copies the jar_
+    _ADD <file to copy> <target>
+    _ADD and COPY are functionally similar, generally COPY is preferred_
+        _COPY only supports the basic copying of local files, while ADD has some extra features_
 - `ENTRYPOINT ["sh", "-c", "java - jar /hello-world-rest-api.jar"]`  
 
 
