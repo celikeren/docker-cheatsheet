@@ -134,7 +134,7 @@
 ## from Dockerfile
 
 `FROM openjdk:8-jdk-alpine`  
-    >_base image_  
+    > _base image_  
     _a Dockerfile must start with FROM_  
     _FROM can appear multiple times within a single Dockerfile_  
     _a name can be given to a new build stage by adding AS name_  
