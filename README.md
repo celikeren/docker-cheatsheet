@@ -4,7 +4,7 @@
 `docker --version`
 
 `docker events`  
-    _get real time events from the server_
+> _get real time events from the server_
 
 
 `docker system df`  
