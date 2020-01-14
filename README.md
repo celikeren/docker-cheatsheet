@@ -23,7 +23,7 @@ _shows docker disk usage_
 
 ## container
 `docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`  
- _does the same:_
+ _does the same:_  
 `docker run in28min..`
 
 `docker run -p 1903:5000 in28min..`  
