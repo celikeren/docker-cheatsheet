@@ -29,7 +29,7 @@
 
 - `docker run -p 1903:5000 in28min..`
     >_publish exposed port(5000) of project to host(1903)_
-_host-port:container-port_
+    _host-port:container-port_
 
 - `docker run -p 1903:5000 -d in28min..`
     >_detached mode_
@@ -47,7 +47,7 @@ _host-port:container-port_
 
 - `docker run -p 5000:5000 --restart=always in28min..`
     >_when you restart docker desktop, the container restarts too._
->_restart=always or restart=no. default is no._
+    >_restart=always or restart=no. default is no._
 
 - `docker top <c_id>`
     >_displays the running processes of container_
@@ -60,7 +60,7 @@ _host-port:container-port_
 
 - `docker run -p 5001:5000 --cpu-quota 5000 in28min..`
     >_typically entire quota which is present is 100.000_
->_how much cpu quota you want to allocate (%5 here)_
+    >_how much cpu quota you want to allocate (%5 here)_
 
 - `docker run -dit openjdk:8-jdk-alpine`
     >_dit: detached and interactive shell_
@@ -114,7 +114,7 @@ _host-port:container-port_
 
 - `docker container cp .\target\hello-world-rest-api.jar practical_solomon:/tmp`  
     >_copy_
-_use c_id instead of nickname_
+    _use c_id instead of nickname_
 
 
 - `docker container exec <c_id> ls /tmp`  
@@ -123,8 +123,8 @@ _use c_id instead of nickname_
 
 - `docker container commit --change='CMD ["java","-jar","/tmp/hello-world-rest-api.jar"]' practical_solomon in28min/hello-world-rest-api:manual1` 
     > _saves the container we creataed as an image_
-_in28min... -> repo name we want to give_
-_change: jar file will be launched at startup_
+    _in28min... -> repo name we want to give_
+    _change: jar file will be launched at startup_
 
 - `docker images`
 
@@ -135,9 +135,9 @@ _change: jar file will be launched at startup_
 
 `FROM openjdk:8-jdk-alpine`  
     >_base image_
-_a Dockerfile must start with FROM_
-_FROM can appear multiple times within a single Dockerfile_
-_a name can be given to a new build stage by adding AS name_
+    _a Dockerfile must start with FROM_
+    _FROM can appear multiple times within a single Dockerfile_
+    _a name can be given to a new build stage by adding AS name_
 
 `ADD target/hello-world-rest-api.jar hello-world-rest-api.jar`  
 `ENTRYPOINT ["sh", "-c", "java - jar /hello-world-rest-api.jar"]`  
