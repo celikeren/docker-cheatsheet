@@ -13,12 +13,12 @@ _shows docker disk usage_
 
 
 ## quick start
-`git clone https://github.com/docker/doodle.git`
-`cd doodle\cheers2019`
-`docker build -t erencelik/cheers2019 .`
-`docker run -it --rm erencelik/cheers2019`
-`docker login`
-`docker push erencelik/cheers2019`
+`git clone https://github.com/docker/doodle.git`  
+`cd doodle\cheers2019`  
+`docker build -t erencelik/cheers2019 .`  
+`docker run -it --rm erencelik/cheers2019`  
+`docker login`  
+`docker push erencelik/cheers2019`  
 
 
 ## container
