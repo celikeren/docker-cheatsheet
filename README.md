@@ -13,40 +13,36 @@ _shows docker disk usage_
 
 
 ## quick start
-`git clone https://github.com/docker/doodle.git  
-cd doodle\cheers2019  
-docker build -t erencelik/cheers2019 .  
-docker run -it --rm erencelik/cheers2019  
-docker login  
-docker push erencelik/cheers2019`
+`git clone https://github.com/docker/doodle.git`
+`cd doodle\cheers2019`
+`docker build -t erencelik/cheers2019 .`
+`docker run -it --rm erencelik/cheers2019`
+`docker login`
+`docker push erencelik/cheers2019`
 
 
 ## container
->docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE
-
+`docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`  
  _does the same:_
 
->docker run in28min..	                  
+`docker run in28min..`
 
->docker run -p 1903:5000 in28min..
-
+`docker run -p 1903:5000 in28min..`  
 _publish exposed port(5000) of project to host(1903)_  
 _host-port:container-port_  
 
->docker run -p 1903:5000 -d in28min..
-
+`docker run -p 1903:5000 -d in28min..`  
 _detached mode_
 
->docker container pause <id>
+`docker container pause <id>`  
 docker container unpause <id>
-  
-docker container inspect <id>
 
-docker container prune
+`docker container inspect <id>`
+
+`docker container prune`  
 _removes all stopped containers_
 
-docker container kill <id>
-_immediate stop_
+`docker container kill <id>`	_immediate stop_
 
 docker run -p 5000:5000 --restart=always in28min..
 _when you restart docker desktop, the container restarts too._
