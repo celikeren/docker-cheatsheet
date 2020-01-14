@@ -2,9 +2,9 @@
 
 hub.docker.com
 
-###commands
+### commands
 
-#####general
+##### general
 docker --version
 
 docker events
@@ -16,7 +16,7 @@ _shows docker disk usage_
 
 
 
-#####quick start
+##### quick start
 git clone https://github.com/docker/doodle.git
 cd doodle\cheers2019
 docker build -t erencelik/cheers2019 .
@@ -27,7 +27,7 @@ docker push erencelik/cheers2019
 
 
 
-#####container
+##### container
 docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE
  _does the same:_
 docker run in28min..	                  
@@ -71,7 +71,7 @@ docker run -dit openjdk:8-jdk-alpine
 _dit: detached and interactive shell_
 
 
-#####images
+##### images
 docker images				
 _shows images_
 
@@ -89,7 +89,7 @@ docker image history <id>
 docker image inspect <id>
 
 
-#####logs
+##### logs
 docker logs <id>
 _first 4 chars of id_
 docker logs -f <id>
@@ -105,7 +105,7 @@ docker container stop <id>
 
 
 
-#####creating image manually
+##### creating image manually
 
 cd ../01-hello-world-rest-api
 
@@ -133,7 +133,7 @@ docker images
 docker run in28min/hello-world-rest-api:manual1
 
 
-#####from Dockerfile
+##### from Dockerfile
 
 FROM openjdk:8-jdk-alpine						
 _base image_
