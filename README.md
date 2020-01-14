@@ -2,6 +2,7 @@
 
 ## general
 `docker --version`
+* tab
 
 `docker events`  
  _get real time events from the server_
