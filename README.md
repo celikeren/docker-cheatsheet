@@ -8,14 +8,14 @@
 _get real time events from the server_
 
 
-docker system df  
+>docker system df  
 _general info about images, containers, cache etc_  
 _shows docker disk usage_  
 
 
 
 ## quick start
-git clone https://github.com/docker/doodle.git  
+>git clone https://github.com/docker/doodle.git  
 cd doodle\cheers2019  
 docker build -t erencelik/cheers2019 .  
 docker run -it --rm erencelik/cheers2019  
@@ -24,9 +24,9 @@ docker push erencelik/cheers2019
 
 
 ## container
-docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE
+>docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE
  _does the same:_  
-docker run in28min..	                  
+>docker run in28min..	                  
 
 docker run -p 1903:5000 in28min..
 _publish exposed port(5000) of project to host(1903)_  
