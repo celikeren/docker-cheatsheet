@@ -3,8 +3,7 @@
 ## general
 >docker --version  
 
->docker events
-
+>docker events<
 _get real time events from the server_
 
 
@@ -26,17 +25,21 @@ docker push erencelik/cheers2019
 
 ## container
 >docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE
- _does the same:_  
+
+ _does the same:_
+
 >docker run in28min..	                  
 
-docker run -p 1903:5000 in28min..
+>docker run -p 1903:5000 in28min..
+
 _publish exposed port(5000) of project to host(1903)_  
 _host-port:container-port_  
 
-docker run -p 1903:5000 -d in28min..
+>docker run -p 1903:5000 -d in28min..
+
 _detached mode_
 
-docker container pause <id>
+>docker container pause <id>
 docker container unpause <id>
   
 docker container inspect <id>
