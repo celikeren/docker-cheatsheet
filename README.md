@@ -1,11 +1,10 @@
 # docker tutorial notes
 
 ## general
-`docker --version`  
-    tab
+`docker --version`
 
 `docker events`  
- _get real time events from the server_
+    _get real time events from the server_
 
 
 `docker system df`  
