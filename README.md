@@ -1,7 +1,7 @@
 # docker tutorial notes
 
 ## general
->docker --version  
+`docker --version`
 
 >docker events<
 _get real time events from the server_
