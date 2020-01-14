@@ -146,7 +146,7 @@
     _COPY only supports the basic copying of local files, while ADD has some extra features_  
 - `ENTRYPOINT ["sh", "-c", "java - jar /hello-world-rest-api.jar"]`  
     > _ENTRYPOINT has two forms:_  
-    _ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)_
+    _ENTRYPOINT ["executable", "param1", "param2"] (exec form, preferred)_  
     _ENTRYPOINT command param1 param2 (shell form)_
 
 
