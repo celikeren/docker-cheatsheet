@@ -152,3 +152,34 @@
     _sh means shell_  
     _\-c means commands are read from string_  
     
+    
+    
+#### docker training
+
+- health check?
+
+- docker version
+
+- docker ps  
+_running containers_
+
+- docker run
+_bir imajdan container ayağa kaldırır_
+
+- docker build
+_verilen dockerfile'dan yeni bir image oluşturur_
+
+- docker cp
+_copies file_
+
+- docker exec
+_verilen komutu çalştırır_
+
+- docker logs
+_container loglarını gösterir_
+
+- docker start
+_id'si verilen container'ı çalştırır_
+
+- docker stop
+_stops the container_
