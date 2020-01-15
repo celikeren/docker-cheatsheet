@@ -46,7 +46,7 @@
     >_immediate stop_
 
 - `docker run -p 5000:5000 --restart=always in28min..`
-    >_when you restart docker desktop, the container restarts too._
+    >_when you restart docker desktoerep, the container restarts too._
     >_restart=always or restart=no. default is no._
 
 - `docker top <c_id>`
@@ -163,6 +163,8 @@
 - docker ps  
 _running containers_
 
+- docker ps -a
+
 - docker run
 _bir imajdan container ayağa kaldırır_
 
@@ -183,3 +185,137 @@ _id'si verilen container'ı çalştırır_
 
 - docker stop
 _stops the container_
+
+
+
+- docker pull hello-world
+
+- docker ps
+_gözükmüyor_
+
+- docker ps -a
+
+_işini yaptı kendini kapattı_
+
+
+## run a container from ubuntu image with a specific name
+## install nginx in this container
+## view nginx welcome page 
+
+docker run -tid --name bjk-ubuntu ubuntu
+
+docker exec -it bjk-ubuntu sh
+
+apt install nginx
+
+_apt update_
+
+service nginx start
+
+apt install curl
+
+curl localhost
+
+exit
+
+
+
+
+
+
+
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+
+
+
+
+
+
+created repo from hub.docker.com named first-repo
+
+docker commit bjk-ubuntu erencelik/first-repo:0.0.1
+
+docker push erencelik/first-repo:0.0.1
+
+
+
+
+
+
+
+
+
+## nginx index.html browser'dan görüntüle
+
+echo "eren" > index.html
+docker run -tid -p 5000:80 -v C:\Users\eren.celik:/usr/share/nginx/html nginx
+
+
+FROM maven:3-jdk-8 
+//projede testler olduğu için jdk. normalde mvn package için jdk'ya gerek yok.
+COPY . /app
+WORKDIR /app
+RUN mvn package
+CMD ["java", "-jar", ""]
+
+docker build . -f Dockerfile
+
+
+
+
+
+
+
+
+
+doğru:
+
+FROM maven:3.6.3-jdk-8
+COPY . /app
+WORKDIR /app
+RUN mvn -Dmaven.test.skip=true package
+CMD ["java", "-jar", "target/helloworld-0.0.1-SNAPSHOT.jar"]
+
+docker build -t workshop:0.0.1 .
+
+docker run -ti -p 1903:8080 workshop:0.0.1
+
+
+
+
+
+
+
+multi-stage:
+
+FROM maven:3.6.3-jdk-8 as builder
+COPY . /app
+WORKDIR /app
+RUN mvn -Dmaven.test.skip=true package
+FROM openjdk:8-alpine
+WORKDIR /app
+COPY --from=builder /app/target/*.jar ./app.jar
+CMD ["java", "-jar", "app.jar"]
+
+
+docker build -t workshop:0.0.2 .
+
+docker run -ti -p 1903:8080 workshop:0.0.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
