@@ -1,4 +1,4 @@
-# <center>docker cheatsheet</center>
+# <p align="center">
 
 
 ## general
