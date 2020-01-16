@@ -1,9 +1,16 @@
-# <p align="center">
-
+# docker cheatsheet
 
 ## general
 - `docker --version`
 
+- `docker version`
+
+- `docker ps`  
+	> asdasd_running containers_
+
+- `docker ps -a`
+	> asdasd_all containers_
+	
 - `docker events`
     > _get real time events from the server_
 
@@ -159,12 +166,9 @@
 
 - health check?
 
-- docker version
 
-- docker ps  
-_running containers_
 
-- docker ps -a
+
 
 - docker run
 _bir imajdan container ayağa kaldırır_
@@ -437,45 +441,5 @@ git add ***
 git status
 git commit -m ""
 git push
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
