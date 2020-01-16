@@ -1,4 +1,5 @@
-# docker cheatsheet
+# <center>docker cheatsheet</center>
+
 
 ## general
 - `docker --version`
