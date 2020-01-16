@@ -246,6 +246,82 @@ docker push erencelik/first-repo:0.0.1
 
 
 
+
+
+------pipeline script---------
+
+instead of git conf in project
+and
+build - execute shell:
+
+docker build -t dummy-eren .
+echo eren > deneme
+docker run -tid -p 9090:8080 dummy-eren
+
+pipeline: (Jenkinsfile)
+
+
+pipeline {
+    agent { label 'master' }
+    stages {
+        stage('git clone') {
+            steps {
+                sh 'rm -rf dummy-spring-boot; git clone https://gitlab.com/celikeren/dummy-spring-boot.git'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'docker build -t erencelik/dummy-eren /var/lib/jenkins/workspace/eren'
+            }
+        }
+        stage('run') {
+            steps {
+                sh 'docker run -tid -p 9090:8080 erencelik/dummy-eren'
+            }
+        }
+        stage('push') {
+            steps {
+                sh 'docker push erencelik/dummy-eren'
+            }
+        }
+    }
+}
+
+
+---------------------------------
+
+dockerfile:
+FROM maven:3.6.3-jdk-8 as builder
+COPY . /app
+WORKDIR /app
+RUN mvn -Dmaven.test.skip=true package
+FROM openjdk:8-alpine
+WORKDIR /app
+COPY --from=builder /app/target/*.jar ./app.jar
+CMD ["java", "-jar", "app.jar"]
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## nginx index.html browser'dan görüntüle
 
 echo "eren" > index.html
@@ -302,6 +378,89 @@ CMD ["java", "-jar", "app.jar"]
 docker build -t workshop:0.0.2 .
 
 docker run -ti -p 1903:8080 workshop:0.0.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------jenkins--------------------------------
+
+ci (continous integration) tool
+amacı entegrasyon
+otomasyon aracı
+projenin derlenmesi, testlerin çalışması, uygulamanın dağıtılmasını otomatize edebilmektedir
+
+--gitlab ci (credentials yönetme zor, docker in docker) 
+--travis (güzelliği debug var)
+
+
+config.xml
+workspace
+
+
+pipeline / free style projects
+
+
+credentials
+    ssh key
+
+
+
+docker pull jenkins/jenkins:2.214-centos
+
+run -p 8080:8080 -p 50000:50000 jenkins/jenkins:2.214-centos
+
+jenkins'in içine docker kurmak gerekiyor.
+Dockerfile'ı çalıştırabilmesi için.
+
+
+
+
+
+
+
+
+git add ***
+git status
+git commit -m ""
+git push
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
