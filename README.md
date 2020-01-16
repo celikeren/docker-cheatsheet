@@ -1,4 +1,4 @@
-# docker tutorial notes
+# docker cheatsheet
 
 ## general
 - `docker --version`
