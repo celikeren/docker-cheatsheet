@@ -2,6 +2,8 @@
 
 ## general
 - `docker --version`
+	> _docker engine version_
+    > `Docker version 19.03.5, build 633a0ea`
 
 - `docker version`
 
