@@ -31,33 +31,32 @@
     >_lists all images_
 
 - `docker tag erencelik/dummy-project:1.0.0.RELEASE erencelik/dummy-project:latest`
-    >_tags an image_
+    >_tags an image_  
     >_docker tag SOURCE\_IMAGE\[:TAG\] TARGET\_IMAGE\[:TAG\]_
-    
 
 - `docker pull ubuntu`
-    >_downloads the image_
+    >_downloads the image_  
     >_if no tag specified, downloads 'latest' as default_
 
 - `docker image rm <iid>`
-    >_removes image locally_
+    >_removes image locally_  
     >_first 2-3 chars of image id is enough as long as it's unique in local_
 
 - `docker search ubuntu`
     >_searches images from docker hub and lists_
 
 - `docker image history <iid>`
-    >_shows the history of an image_
-    >_if you get the error:_
-    _unable to delete - image has dependent child images_
-    _try using repository name and tag instead of image id:_
+    >_shows the history of an image_  
+    >_if you get the error:_  
+    _unable to delete - image has dependent child images_  
+    _try using repository name and tag instead of image id:_  
     `docker image rm ubuntu:latest`
 
 - `docker image inspect <iid>`
     >_shows detailed information of an image_
 
 - `docker build .`
-    >_builds an image from a Dockerfile in current directory_
+    >_builds an image from a Dockerfile in current directory_  
     _an url or path can be given_
 
 - `docker push dummy-project:latest`
@@ -79,26 +78,26 @@
 - `docker ps -a`  
     >_shows all containers_
 
-- `docker container run hello-world` or `docker run hello-world`
-    >_runs a container_
+- `docker container run hello-world`  or  `docker run hello-world`
+    >_runs a container_  
     >_if not available locally, downloads_
 
 - `docker run -p 1903:8080 erencelik/dummy-project`
-    >_publish exposed port(8080) of project to host(1903)_
+    >_publishes exposed port(8080) of project to host(1903)_  
     _host-port:container-port_
 
 - `docker run -p 1903:8080 -d erencelik/dummy-project`
     >_runs in detached mode (background)_
 
 - `docker run -it ubuntu`
-    >_i for interactive and t for tty_
-    >_it runs the container and takes you straight inside the container_  
-    >_here it creates an interactive bash shell in ubuntu_
+    >_i for interactive and t for tty_  
+    >_it runs the container and takes you straight inside the container_   
+    >_here it creates an interactive bash shell in ubuntu_  
     >_'exit' command will exit shell_
 
 - `docker run -dit ubuntu`
-    >_we do the same but in detached mode_
-    _it creates shell but we don't directly go there_
+    >_we do the same but in detached mode_  
+    _it creates shell but we don't directly go there_  
       - `docker exec -it <cid> sh`  
         >_with this command we can go shell after running in detached mode_
 
