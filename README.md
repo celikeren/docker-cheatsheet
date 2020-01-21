@@ -9,7 +9,7 @@
 	
 - `docker events`
     > _get real time events from the server_  
-    _(when a container stops, an image is pushed, daemon reloads etc)_
+    _when a container stops, an image is pushed, daemon reloads etc_
 
 - `docker system df`
     > _shows docker disk usage_
@@ -22,6 +22,9 @@
 `docker run -it --rm erencelik/cheers2019`  
 `docker login`  
 `docker push erencelik/cheers2019`  
+
+    >_gets the repo, builds an image from the Dockerfile, 
+    _runs it as a container and pushes the image to hub.docker.com_
 
 ## images
 - `docker images`
@@ -75,7 +78,7 @@
 - `docker ps -a`  
     >_shows all containers_
 
-- `docker container ru n hello-world` or `docker run hello-world`
+- `docker container run hello-world` or `docker run hello-world`
     >_runs a container_
     >_if not available locally, downloads_
 
@@ -100,7 +103,10 @@
 
 - `docker run -tid --name my-ubuntu ubuntu`
     >_assigns a name to the container_
-
+    
+- `docker run -it --rm erencelik/cheers2019`  
+    >_--rm automatically remove the container when it exits_
+    
 - `docker container stop <cid>`   
     >_stops a running container_     
 
