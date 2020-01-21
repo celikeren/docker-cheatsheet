@@ -156,18 +156,13 @@
 
 
 
+### task:
+1. run a container from ubuntu image with a specific name
+2. install nginx in this container
+3. view nginx welcome page and exit 
 
-## run a container from ubuntu image with a specific name
-## install nginx in this container
-## view nginx welcome page and exit 
 
-
-- `docker run -tid --name my-ubuntu ubuntu`
-- `docker exec -it my-ubuntu sh`
-
-or just
-
-- `docker run -ti --name my-ubuntu ubuntu`
+- `docker run -it --name my-ubuntu ubuntu`
 
 - `apt install nginx`
     >_if you get this error: Unable to locate package nginx_
