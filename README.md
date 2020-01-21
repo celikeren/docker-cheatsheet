@@ -2,27 +2,26 @@
 
 ## general
 - `docker --version`
-	> _docker engine version_
+	> _docker engine version_  
     > `Docker version 19.03.5, build 633a0ea`
 
 - `docker version`
+	> _docker version details_  
 
 - `docker ps`  
-	> asdasd_running containers_
+	> _lists running containers_
 
 - `docker ps -a`
-	> asdasd_all containers_
+	> _lists all containers_
 	
 - `docker events`
-    > _get real time events from the server_
-
+    > _get real time events from the server (when a container stops, an image is pushed, daemon reloads etc)_
 
 - `docker system df`
-    > _general info about images, containers, cache etc_
-  _shows docker disk usage_
+    > _shows docker disk usage_
 
 
-## quick start
+## quick start from hub.docker.com
 `git clone https://github.com/docker/doodle.git`  
 `cd doodle\cheers2019`  
 `docker build -t erencelik/cheers2019 .`  
@@ -30,101 +29,142 @@
 `docker login`  
 `docker push erencelik/cheers2019`  
 
-
-## container
-- `docker container run in28min/todo-rest-api-h2:1.0.0.RELEASE`
-    >_does the same:_
-    - `docker run in28min..`
-
-
-- `docker run -p 1903:5000 in28min..`
-    >_publish exposed port(5000) of project to host(1903)_
-    _host-port:container-port_
-
-- `docker run -p 1903:5000 -d in28min..`
-    >_detached mode_
-
-- `docker container pause <id>`
-    >docker container unpause <id>
-
-- `docker container inspect <id>`
-
-- `docker container prune`
-    >_removes all stopped containers_
-
-- `docker container kill <id>`
-    >_immediate stop_
-
-- `docker run -p 5000:5000 --restart=always in28min..`
-    >_when you restart docker desktoerep, the container restarts too._
-    >_restart=always or restart=no. default is no._
-
-- `docker top <c_id>`
-    >_displays the running processes of container_
-
-- `docker stats`
-    >_shows all the stats about the running containers_
-
-- `docker run -p 5001:5000 -m 512m in28min..`
-    >_specific max memory: 512m / 1G_
-
-- `docker run -p 5001:5000 --cpu-quota 5000 in28min..`
-    >_typically entire quota which is present is 100.000_
-    >_how much cpu quota you want to allocate (%5 here)_
-
-- `docker run -dit openjdk:8-jdk-alpine`
-    >_dit: detached and interactive shell_
-
-
 ## images
 - `docker images`
-    >_shows images_
+    >_lists all images_
 
-- `docker tag in28min/todo-rest-api-h2:1.0.0.RELEASE in28min/todo-rest-api-h2:latest`
+- `docker tag erencelik/dummy-project:1.0.0.RELEASE erencelik/dummy-project:latest`
+    >_docker tag SOURCE\_IMAGE\[:TAG\] TARGET\_IMAGE\[:TAG\]_  
+    >_tags an image_
 
-- `docker pull mysql`
+- `docker pull ubuntu`
+    >_downloads the image_
+    >_if no tag specified, downloads 'latest' as default_
 
-- `docker image remove <id>`
-    >_removes locally_
+- `docker image rm <iid>`
+    >_removes image locally_
+    >_first 2-3 chars of image id is enough as long as it's unique in local_
 
-- `docker search mysql`
+- `docker search ubuntu`
+    >_searches images from docker hub and lists_
 
-- `docker image history <id>`
+- `docker image history <iid>`
+    >_shows the history of an image_
+    >_if you get the error:_
+    _unable to delete - image has dependent child images_
+    _try using repository name and tag instead of image id:_
+    `docker image rm ubuntu:latest`
 
-- `docker image inspect <id>`
+- `docker image inspect <iid>`
+    >_shows detailed information of an image_
+
+- `docker build .`
+    >_builds an image from a Dockerfile in current directory_
+    _an url or path can be given_
+
+- `docker push dummy-project:latest`
+    >_push an image or a repository to a registry_
 
 
-## logs
-- `docker logs <id>`  
-    >_first 4 chars of id_
 
-- `docker logs -f <id>`  
-    >_follow/tail logs_
+## containers
 
 - `docker container ls`  
     >_shows the running containers_
 
 - `docker container ls -a`  
-    >_all -> terminated containers included_
+    >_shows all containers_
 
-- `docker container stop <id>`  
+- `docker ps`  
+    >_shows the running containers_
+
+- `docker ps -a`  
+    >_shows all containers_
+
+- `docker container ru n hello-world` or `docker run hello-world`
+    >_runs a container_
+    >_if not available locally, downloads_
+
+- `docker run -p 1903:8080 erencelik/dummy-project`
+    >_publish exposed port(8080) of project to host(1903)_
+    _host-port:container-port_
+
+- `docker run -p 1903:8080 -d erencelik/dummy-project`
+    >_runs in detached mode (background)_
+
+- `docker run -it ubuntu`
+    >_i for interactive and t for tty_
+    >_it runs the container and takes you straight inside the container_  
+    >_here it creates an interactive bash shell in ubuntu_
+    >_'exit' command will exit shell_
+
+- `docker run -dit ubuntu`
+    >_we do the same but in detached mode_
+    _it creates shell but we don't directly go there_
+      - `docker exec -it <cid> sh`  
+        >_with this command we can go shell after running in detached mode_
+
+- `docker run -tid --name my-ubuntu ubuntu`
+    >_assigns a name to the container_
+
+- `docker container stop <cid>`   
+    >_stops a running container_     
+
+- `docker container pause <cid>`
+
+- `docker container unpause <cid>`
+
+- `docker container inspect <cid>`
+
+- `docker container prune`
+    >_removes all stopped containers_
+
+- `docker container kill <cid>`
+    >_immediate stop_
+
+- `docker run -p 8080:8080 --restart=always erencelik/dummy-project`
+    >_when you restart docker desktop, the container restarts too._
+    >_restart=always or restart=no. default is no._
+
+- `docker top <cid>`
+    >_displays the running processes of container_
+
+- `docker stats`
+    >_shows all the stats about the running containers_
+
+- `docker run -p 8080:8080 -m 512m erencelik/dummy-project`
+    >_specific max memory: 512m/1g_
+
+
+- `docker logs <cid>`  
+    >_shows the logs of a container_
+
+- `docker logs -f <cid>`  
+    >_follow logs_
+
+- `docker cp `  
+    >_copies files/folders between a container and the local filesystem_
+    _docker cp CONTAINER:SRC\_PATH DEST\_PATH_
+
+- `docker commit my-ubuntu erencelik/dummy-project:0.0.2`
+    >_creates a new image from a container’s changes_
+    _this command allows us to take a running container and save its current state as an image_
+    _for example you can run some commands in a running container via exec, make some changes and immediately create a new image with the latest situation_
+    _takes two parameters: docker commit CONTAINER REPOSITORY[:TAG]_
 
 
 ## creating image manually
 
-- `cd ../01-hello-world-rest-api`
-
 - `docker run -dit openjdk:8-jdk-alpine`
 
-- `docker container exec <c_id> ls /tmp`
+- `docker container exec <cid> ls /tmp`
 
 - `docker images`
 
 - `docker container ls`
 
-- `docker container cp .\target\hello-world-rest-api.jar practical_solomon:/tmp`  
+- `docker container cp .\target\dummy-project.jar cid:/tmp`  
     >_copy_
-    _use c_id instead of nickname_
 
 
 - `docker container exec <c_id> ls /tmp`  
@@ -141,7 +181,7 @@
 - `docker run in28min/hello-world-rest-api:manual1`
 
 
-## from Dockerfile
+## Dockerfile commands
 
 - `FROM openjdk:8-jdk-alpine`  
     > _base image_  
@@ -151,7 +191,7 @@
 
 - `ADD target/hello-world-rest-api.jar hello-world-rest-api.jar`
     > _ADD copies files or directories_  
-    _ADD \<src> \<dest>  
+    _ADD \<src> \<dest>_  
     _ADD and COPY are functionally similar, generally COPY is preferred_  
     _COPY only supports the basic copying of local files, while ADD has some extra features_  
 - `ENTRYPOINT ["sh", "-c", "java - jar /hello-world-rest-api.jar"]`  
@@ -162,77 +202,39 @@
     _sh means shell_  
     _\-c means commands are read from string_  
     
+    ....devam edecek
     
-    
-#### docker training
 
-- health check?
-
-
-
-
-
-- docker run
-_bir imajdan container ayağa kaldırır_
-
-- docker build
-_verilen dockerfile'dan yeni bir image oluşturur_
-
-- docker cp
-_copies file_
-
-- docker exec
-_verilen komutu çalştırır_
-
-- docker logs
-_container loglarını gösterir_
-
-- docker start
-_id'si verilen container'ı çalştırır_
-
-- docker stop
-_stops the container_
-
-
-
-- docker pull hello-world
-
-- docker ps
-_gözükmüyor_
-
-- docker ps -a
-
-_işini yaptı kendini kapattı_
 
 
 ## run a container from ubuntu image with a specific name
 ## install nginx in this container
-## view nginx welcome page 
-
-docker run -tid --name bjk-ubuntu ubuntu
-
-docker exec -it bjk-ubuntu sh
-
-apt install nginx
-
-_apt update_
-
-service nginx start
-
-apt install curl
-
-curl localhost
-
-exit
+## view nginx welcome page and exit 
 
 
+- `docker run -tid --name my-ubuntu ubuntu`
+- `docker exec -it my-ubuntu sh`
+
+or just
+
+- `docker run -ti --name my-ubuntu ubuntu`
+
+- `apt install nginx`
+    >_if you get this error: Unable to locate package nginx_
+    >_run this command and try again:
+    `_apt update`
+    _in ubuntu, it's always suggested to run an update before installing someting new_
+
+- `service nginx start`
+
+- `apt install curl`
+
+- `curl localhost`
+
+- `exit`
 
 
 
-
-
-docker tag local-image:tagname new-repo:tagname
-docker push new-repo:tagname
 
 
 
@@ -241,7 +243,8 @@ docker push new-repo:tagname
 
 created repo from hub.docker.com named first-repo
 
-docker commit bjk-ubuntu erencelik/first-repo:0.0.1
+
+
 
 docker push erencelik/first-repo:0.0.1
 
