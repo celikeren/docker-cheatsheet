@@ -1,21 +1,15 @@
 # docker cheatsheet
 
-## general
+## intro
 - `docker --version`
 	> _docker engine version_  
-    > `Docker version 19.03.5, build 633a0ea`
 
 - `docker version`
-	> _docker version details_  
-
-- `docker ps`  
-	> _lists running containers_
-
-- `docker ps -a`
-	> _lists all containers_
+	> _docker version in detail_  
 	
 - `docker events`
-    > _get real time events from the server (when a container stops, an image is pushed, daemon reloads etc)_
+    > _get real time events from the server_
+    _(when a container stops, an image is pushed, daemon reloads etc)_
 
 - `docker system df`
     > _shows docker disk usage_
