@@ -1,11 +1,11 @@
 # docker cheatsheet
 
 ## intro
-- `docker --version`
-	> _docker engine version_  
+- `docker --version`  
+    > _docker engine version_  
 
 - `docker version`
-	> _docker version in detail_  
+    > _docker version in detail_  
 	
 - `docker events`
     > _get real time events from the server_  
@@ -41,16 +41,16 @@
 - `docker image rm <iid>`
     >_removes image locally_  
     >_first 2-3 chars of image id is enough as long as it's unique in local_
+    >_if you get the error:_  
+    _unable to delete - image has dependent child images_  
+    _try using repository name and tag instead of image id:_  
+        `docker image rm ubuntu:latest`
 
 - `docker search ubuntu`
     >_searches images from docker hub and lists_
 
 - `docker image history <iid>`
     >_shows the history of an image_  
-    >_if you get the error:_  
-    _unable to delete - image has dependent child images_  
-    _try using repository name and tag instead of image id:_  
-    `docker image rm ubuntu:latest`
 
 - `docker image inspect <iid>`
     >_shows detailed information of an image_
