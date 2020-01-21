@@ -31,8 +31,9 @@
     >_lists all images_
 
 - `docker tag erencelik/dummy-project:1.0.0.RELEASE erencelik/dummy-project:latest`
-    >_docker tag SOURCE\_IMAGE\[:TAG\] TARGET\_IMAGE\[:TAG\]_  
     >_tags an image_
+    >_docker tag SOURCE\_IMAGE\[:TAG\] TARGET\_IMAGE\[:TAG\]_
+    
 
 - `docker pull ubuntu`
     >_downloads the image_
