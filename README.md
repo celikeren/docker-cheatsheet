@@ -8,7 +8,7 @@
 	> _docker version in detail_  
 	
 - `docker events`
-    > _get real time events from the server_
+    > _get real time events from the server_  
     _(when a container stops, an image is pushed, daemon reloads etc)_
 
 - `docker system df`
