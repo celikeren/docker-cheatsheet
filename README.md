@@ -167,7 +167,7 @@
 - `apt install nginx`
     >_if you get this error: Unable to locate package nginx_  
     >_run this command and try again:  
-    `_apt update`  
+    `apt update`  
     _in ubuntu, it's always suggested to run an update before installing someting new_
 
 - `service nginx start`
