@@ -24,7 +24,7 @@
 `docker push erencelik/cheers2019`  
 
     > _gets the repo, builds an image from the Dockerfile,_   
-    _runs it as a container and pushes the image to your registry in hub.docker.com_
+    > _runs it as a container and pushes the image to your registry in hub.docker.com_
 
 ## images
 - `docker images`
