@@ -40,7 +40,7 @@ _runs it as a container and pushes the image to your registry in hub.docker.com_
 
 - `docker image rm <iid>`
     >_removes image locally_  
-    >_first 2-3 chars of image id is enough as long as it's unique in local_
+    >_first 2-3 chars of image id is enough as long as it's unique in local_  
     >_if you get the error:_  
     _unable to delete - image has dependent child images_  
     _try using repository name and tag instead of image id:_  
@@ -122,6 +122,8 @@ _runs it as a container and pushes the image to your registry in hub.docker.com_
 - `docker container kill <cid>`
     >_immediate stop_
 
+  
+  
 - `docker run -p 8080:8080 --restart=always erencelik/dummy-project`
     >_when you restart docker desktop, the container restarts too._  
     >_restart=always or restart=no. default is no._
@@ -134,7 +136,6 @@ _runs it as a container and pushes the image to your registry in hub.docker.com_
 
 - `docker run -p 8080:8080 -m 512m erencelik/dummy-project`
     >_specific max memory: 512m/1g_
-
 
 - `docker logs <cid>`  
     >_shows the logs of a container_
