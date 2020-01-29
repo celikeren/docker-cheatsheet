@@ -1,4 +1,4 @@
-# docker cheatsheet
+# docker cheatsheet :whale:
 
 ## intro
 - `docker --version`  
