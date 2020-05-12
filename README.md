@@ -89,7 +89,7 @@ _runs it as a container and pushes the image to your registry in hub.docker.com_
 - `docker run -p 1903:8080 -d erencelik/dummy-project`
     >_runs in detached mode (background)_
     
-- `docker run -p 8032:8032 -e "SPRING_PROFILES_ACTIVE=test" <cid>`
+- `docker run -p 8032:8032 -e "SPRING_PROFILES_ACTIVE=test" <iid>`
     >_run with environment_
 
 - `docker run -it ubuntu`
