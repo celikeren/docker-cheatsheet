@@ -125,7 +125,8 @@ _runs it as a container and pushes the image to your registry in hub.docker.com_
 - `docker container kill <cid>`
     >_immediate stop_
 
-  
+- `docker rm $(docker ps -a -q)`
+    >_removes all stopped containers_  
   
 - `docker run -p 8080:8080 --restart=always erencelik/dummy-project`
     >_when you restart docker desktop, the container restarts too._  
